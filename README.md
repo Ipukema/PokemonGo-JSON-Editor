@@ -1,7 +1,6 @@
 <p align="center">
-  <img src="https://i.gyazo.com/0d0bc90de06105422c17590ff4af3c30.png" alt="Icon" height="498" width="750" >
+  <img src="https://i.gyazo.com/0d0bc90de06105422c17590ff4af3c30.png" alt="Icon" width="180" >
   <br>
-  <h1>PokemonGo JSON Editor</h1>
 </p>
 
 # PokemonGo-JSON-Editor
