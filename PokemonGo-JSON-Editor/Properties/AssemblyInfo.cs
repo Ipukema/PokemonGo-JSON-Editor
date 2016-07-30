@@ -6,11 +6,11 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("PokemonGo-JSON-Editor")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Edit your PokemonGo-Bot configs")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("MaBoProjects")]
 [assembly: AssemblyProduct("PokemonGo-JSON-Editor")]
-[assembly: AssemblyCopyright("Copyright ©  2016")]
+[assembly: AssemblyCopyright("Copyright © Marco Boekholt 2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

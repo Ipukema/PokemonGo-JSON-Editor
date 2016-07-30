@@ -26,7 +26,7 @@ namespace PokemonGo_JSON_Editor
             OpenFileDialog theDialog = new OpenFileDialog();
             theDialog.Title = "Open Text File";
             theDialog.Filter = "JSON files|*.json";
-            theDialog.InitialDirectory = @"C:\Users\******\Desktop\Pokemon";
+            theDialog.InitialDirectory = Path.GetFullPath(Environment.CurrentDirectory);
             if (theDialog.ShowDialog() == DialogResult.OK)
             {
                 try
@@ -109,7 +109,7 @@ namespace PokemonGo_JSON_Editor
             });
 
             SaveFileDialog saveFileDialog1 = new SaveFileDialog();
-            saveFileDialog1.InitialDirectory = @"C:\Users\MarcoBoekholt\Desktop\Pokemon";
+            saveFileDialog1.InitialDirectory = Path.GetFullPath(Environment.CurrentDirectory);
             saveFileDialog1.Filter = "JSON Image|*.json";
             saveFileDialog1.Title = "Save a JSON File";
 
