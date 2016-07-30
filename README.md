@@ -17,3 +17,8 @@ Before you can do anything download the program <a href="https://github.com/Marc
  * Edit config
  * Save config
 
+## TODO
+ - [ ] Fix the dropdown buttons so they work with true and false.
+ - [ ] Add Item filter so users can select multiple items they dont want.
+ - [ ] add evolve all selection
+ - [ ] Fix walk sped in json file
