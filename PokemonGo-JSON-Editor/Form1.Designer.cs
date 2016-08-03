@@ -397,6 +397,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Editor";
             this.Text = "Pokemon Go - Json Editor";
+            this.Load += new System.EventHandler(this.Editor_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

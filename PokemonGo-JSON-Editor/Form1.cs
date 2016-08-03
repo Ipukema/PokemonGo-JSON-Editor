@@ -20,6 +20,21 @@ namespace PokemonGo_JSON_Editor
             InitializeComponent();
         }
 
+        private void Editor_Load(object sender, EventArgs e)
+        {
+            Username.Text = "Username@gmail.com";
+            Password.Text = "Gmail password";
+            Location.Text = "40.7813173,-73.9689944";
+            Gmaps_key.Text = "Google Maps API KEY";
+            Max_steps.Text = "5";
+            Mode.Text = "all";
+            Walk_speed.Text = "4.16";
+            Debug.SelectedIndex = 1;
+            Test.SelectedIndex = 1;
+            Initial_transfer.Text = "0";
+            Location_cache.SelectedIndex = 0;
+        }
+
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (File.Exists("config.json"))
@@ -119,5 +134,6 @@ namespace PokemonGo_JSON_Editor
             System.Windows.Forms.Application.Exit();
         }
 
+        
     }
 }
