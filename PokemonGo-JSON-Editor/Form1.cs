@@ -22,64 +22,44 @@ namespace PokemonGo_JSON_Editor
 
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Stream myStream = null;
-            OpenFileDialog theDialog = new OpenFileDialog();
-            theDialog.Title = "Open Text File";
-            theDialog.Filter = "JSON files|*.json";
-            theDialog.InitialDirectory = Path.GetFullPath(Environment.CurrentDirectory);
-            if (theDialog.ShowDialog() == DialogResult.OK)
+            using (StreamReader r = new StreamReader("config.json"))
             {
-                try
+                string json = r.ReadToEnd();
+                Userinfo items = JsonConvert.DeserializeObject<Userinfo>(json);
+                Auth_service.Items.Add(items.auth_service);
+                Username.Text = items.username;
+                Password.Text = items.password;
+                Location.Text = items.location;
+                Gmaps_key.Text = items.gmapkey;
+                Max_steps.Text = items.max_steps.ToString();
+                Mode.Text = items.mode;
+                Walk_speed.Text = items.walk;
+                if (items.debug == true)
                 {
-                    if (theDialog.FileName.Trim() != string.Empty)
-                    {
-                        using (StreamReader r = new StreamReader(theDialog.FileName))
-                        {
-                            string json = r.ReadToEnd();
-                            Userinfo items = JsonConvert.DeserializeObject<Userinfo>(json);
-                            Auth_service.Items.Add(items.auth_service);
-                            Username.Text = items.username;
-                            Password.Text = items.password;
-                            Location.Text = items.location;
-                            Gmaps_key.Text = items.gmapkey;
-                            Max_steps.Text = items.max_steps.ToString();
-                            Mode.Text = items.mode;
-                            Walk_speed.Text = items.walk;
-                            if (items.debug == true)
-                            {
-                                Debug.SelectedIndex = 0;
-                            }
-                            else
-                            {
-                                Debug.SelectedIndex = 1;
-                            }
-                            if (items.test == true)
-                            {
-                                Test.SelectedIndex = 0;
-                            }
-                            else
-                            {
-                                Test.SelectedIndex = 1;
-                            }
-                            Initial_transfer.Text = items.initial_transfer.ToString();
-                            if (items.location_cache == true)
-                            {
-                                Location_cache.SelectedIndex = 0;
-                            }
-                            else
-                            {
-                                Location_cache.SelectedIndex = 1;
-                            }
-                            Distance_unit.Items.Add(items.distance_unit);
-
-
-                        }
-                    }
+                    Debug.SelectedIndex = 0;
                 }
-                catch (Exception ex)
+                else
                 {
-                    MessageBox.Show("Error: Could not read file from disk. Original error: " + ex.Message);
+                    Debug.SelectedIndex = 1;
                 }
+                if (items.test == true)
+                {
+                    Test.SelectedIndex = 0;
+                }
+                else
+                {
+                    Test.SelectedIndex = 1;
+                }
+                Initial_transfer.Text = items.initial_transfer.ToString();
+                if (items.location_cache == true)
+                {
+                    Location_cache.SelectedIndex = 0;
+                }
+                else
+                {
+                    Location_cache.SelectedIndex = 1;
+                }
+                Distance_unit.Items.Add(items.distance_unit);
             }
         }
 
