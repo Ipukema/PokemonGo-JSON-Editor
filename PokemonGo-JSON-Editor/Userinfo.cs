@@ -15,7 +15,7 @@ namespace PokemonGo_JSON_Editor
             public string gmapkey { get; set; }
             public int max_steps { get; set; }
             public string mode { get; set; }
-            public string walk { get; set; }
+            public float walk { get; set; }
             public bool debug { get; set; }
             public bool test { get; set; }
             public int initial_transfer { get; set; }

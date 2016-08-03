@@ -51,7 +51,7 @@ namespace PokemonGo_JSON_Editor
                     Gmaps_key.Text = items.gmapkey;
                     Max_steps.Text = items.max_steps.ToString();
                     Mode.Text = items.mode;
-                    Walk_speed.Text = items.walk;
+                    Walk_speed.Text = items.walk.ToString();
                     if (items.debug == true)
                     {
                         Debug.SelectedIndex = 0;
@@ -99,7 +99,7 @@ namespace PokemonGo_JSON_Editor
                 gmapkey = "" + Gmaps_key.Text + "",
                 max_steps = Int32.Parse(Max_steps.Text),
                 mode = "" + Mode.Text + "",
-                walk = Walk_speed.Text,
+                walk = float.Parse(Walk_speed.Text),
                 debug = false,
                 test = false,
                 initial_transfer = Int32.Parse(Initial_transfer.Text),
